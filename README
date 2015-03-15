@@ -1,0 +1,23 @@
+
+Wyvern Tail AS3 Game Development Library
+
+See license.txt for terms of use.
+
+There are two major components to this package,
+
+- The library found under the lib/wyverntail directory.
+- The framework found under the framework directory.
+
+The library is meant to be used without needing to be editted for your
+specific project, although you may of course edit it if you wish.
+
+The framework depends on the library and is meant to be copied and modified
+to suit your project.  It may be also useful as merely a reference, if you
+find that it does not suit your project.
+
+This project's home is on Google Code,
+
+	https://code.google.com/p/wyvern-tail/
+
+Further documentation may be found there.
+

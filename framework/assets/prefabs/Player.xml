@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<prefab type="Player" parent="Entity">
+	<component type="Transform" x=10 y=20 />
+	<component type="Sprite" texture="player" />
+</prefab>
+

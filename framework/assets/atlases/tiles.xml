@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:b1a150be14d4a0b82588f33cec0790af$ -->
+<TextureAtlas imagePath="tiles.png">
+    <SubTexture name="groundtile1" x="0" y="0" width="33" height="32"/>
+    <SubTexture name="groundtile2" x="35" y="0" width="32" height="32"/>
+    <SubTexture name="groundtile3" x="69" y="0" width="32" height="32"/>
+    <SubTexture name="groundtile4" x="0" y="34" width="32" height="32"/>
+    <SubTexture name="groundtile5" x="34" y="34" width="32" height="32"/>
+    <SubTexture name="wallunit1" x="68" y="34" width="32" height="32"/>
+    <SubTexture name="wallunit2" x="0" y="68" width="32" height="32"/>
+    <SubTexture name="wallunit3" x="34" y="68" width="32" height="32"/>
+</TextureAtlas>

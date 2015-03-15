@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<scene id="main">
+	<prefab id="Player" type="Player" />
+	<entity id="Camera" type="Camera" />
+</scene>
+
