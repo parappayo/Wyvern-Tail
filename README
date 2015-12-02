@@ -1,23 +1,45 @@
 
-Wyvern Tail AS3 Game Development Library
+Wyvern-Tail ActionScript Game Development Library
 
-See license.txt for terms of use.
+See LICENSE for terms of use.
+
+Wyvern-Tail provides a simple Entity-Component framework and integration for
+Ogmo Editor data to be used with the Starling library.  The following tools
+chain is recommend for getting the most use out of Wyvern-Tail:
+
+- FlashDevelop
+- Starling Game Engine
+- Ogmo Editor
+- TexturePacker
 
 There are two major components to this package,
 
 - The library found under the lib/wyverntail directory.
 - The framework found under the framework directory.
 
-The library is meant to be used without needing to be editted for your
-specific project, although you may of course edit it if you wish.
+The library contains the core functionality of the Wyvern-Tail project.
+Under library/core there are the classes the define the Entity-Component
+architecture, as well as core types such as Prefab, Camera, Flow, and other
+such game engine systems.
 
-The framework depends on the library and is meant to be copied and modified
-to suit your project.  It may be also useful as merely a reference, if you
-find that it does not suit your project.
+The library/ogmo directory contains classes specific to Wyvern-Tail's Ogmo
+integration systems and are not depended on by any of the other library
+classes.  Ogmo Editor is not strictly necessary to use these classes since
+the data file formats are straight-forward.
 
-This project's home is on Google Code,
+The library/common directory provides non-essential helper classes that are
+not specific to any project.  This part of the library is a work in progress
+and is intended to speed up rapid prototyping with some common game design
+behaviours.
 
-	https://code.google.com/p/wyvern-tail/
+The framework demonstrates the use of the library and is meant to be forked
+(copied and modified) to suit your project.  Under framework/src there is
+core application code, under framework/src/ui there is a sample UI flow
+system, and under framework/src/common there are some sample utility classes.
+
+This project's home is on GitHub,
+
+	https://github.com/parappayo/Wyvern-Tail
 
 Further documentation may be found there.
 
