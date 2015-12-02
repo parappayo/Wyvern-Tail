@@ -14,7 +14,7 @@ package wyverntail.ogmo
 		
 		public function GridLayer() 
 		{
-			
+			_type = Layer.LAYER_TYPE_GRID;
 		}
 		
 		override public function init(data :XML) :void

@@ -8,19 +8,17 @@
 
 package wyverntail.ogmo 
 {
-	import flash.utils.Dictionary;
-	
 	public class Entity 
 	{
 		public var type :String;
 		public var id :int;
 		public var x :int;
 		public var y :int;
-		public var properties :Dictionary;
+		public var properties :Object;
 		
 		public function Entity() 
 		{
-			properties = new Dictionary();
+			properties = new Object();
 		}
 		
 		public function init(data :XML) :void
