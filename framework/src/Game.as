@@ -119,16 +119,14 @@ package
 			var cellgrid :CellGrid = new CellGrid(level.width / Settings.TileWidth, Settings.TileWidth, Settings.TileHeight);
 			cellgrid.addData(walkmeshLayer.bitstring);
 
-			var factory :Factory = new Factory();
-
-			factory.addPrefab("camera",
+			Prefab.define("camera",
 				Vector.<Class>([ Position2D, Camera ]),
 				{});
-			var camera :wyverntail.core.Entity = factory.spawn(_gameplayScene, "camera", { target : _gameplaySprite } );
+			var camera :wyverntail.core.Entity = Prefab.spawn(_gameplayScene, "camera", { target : _gameplaySprite } );
 
 			// not all games have a player entity, but this is a reasonable starting point for top-down action games
 			// (you may want to add a Player component for your game's custom player logic)
-			factory.addPrefab("player",
+			Prefab.define("player",
 				Vector.<Class>([ Position2D, MovieClip, Hitbox, CameraPusher, Movement4Way ]),
 				{
 					game : this,
@@ -141,13 +139,13 @@ package
 							Settings.ScreenWidth * 0.6,
 							Settings.ScreenHeight * 0.6 )
 				});
-			var player :wyverntail.core.Entity = factory.spawn(_gameplayScene, "player", { worldX : 0, worldY : 0 } );
+			var player :wyverntail.core.Entity = Prefab.spawn(_gameplayScene, "player", { worldX : 0, worldY : 0 } );
 			
-			factory.addPrefab("player_spawn",
+			Prefab.define("player_spawn",
 				Vector.<Class>([ Position2D, PlayerTeleportDestination ]),
 				{ player : player } );
 				
-			factory.addPrefab("level_transition",
+			Prefab.define("level_transition",
 				Vector.<Class>([ Position2D, ProximityTrigger ]),
 				{
 					game : this,
@@ -157,18 +155,18 @@ package
 					canRepeat : true
 				});
 			
-			addPropPrefab(factory, "barrel", cellgrid);
-			addPropPrefab(factory, "crate", cellgrid);
+			addPropPrefab("barrel", cellgrid);
+			addPropPrefab("crate", cellgrid);
 
 			var entityLayer :EntityLayer = level.layers["entities"] as EntityLayer;
-			entityLayer.spawn(_gameplayScene, factory);
+			entityLayer.spawn(_gameplayScene);
 			
 			handleSignal(Signals.TELEPORT_PLAYER, this, { destinationName : spawnPointName } );
 		}
 		
-		protected function addPropPrefab(factory :Factory, name :String, cellgrid :CellGrid) :void
+		protected function addPropPrefab(name :String, cellgrid :CellGrid) :void
 		{
-			factory.addPrefab(name,
+			Prefab.define(name,
 				Vector.<Class>([ Position2D, wyverntail.core.Sprite, CellCollider ]),
 				{
 					parentSprite : _gameplaySprite,

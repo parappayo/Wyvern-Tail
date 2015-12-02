@@ -9,7 +9,7 @@
 package wyverntail.ogmo 
 {
 	import starling.display.Sprite;
-	import wyverntail.core.Factory;
+	import wyverntail.core.Prefab;
 	import wyverntail.core.Scene;
 
 	public class EntityLayer extends Layer
@@ -34,7 +34,7 @@ package wyverntail.ogmo
 			}
 		}
 		
-		public function spawn(scene :Scene, factory :Factory) :void
+		public function spawn(scene :Scene) :void
 		{
 			for each (var e :Entity in entities)
 			{
@@ -45,7 +45,7 @@ package wyverntail.ogmo
 					spawnArgs[i] = e.properties[i];
 				}
 
-				factory.spawn(scene, e.type, spawnArgs);
+				Prefab.spawn(scene, e.type, spawnArgs);
 			}
 		}
 		
