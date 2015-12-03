@@ -6,9 +6,26 @@
         <key>texturePackerVersion</key>
         <string>3.3.3</string>
         <key>fileName</key>
-        <string>C:/Users/Jason/Documents/Wyvern-Tail/framework/assets/atlases/tiles.tps</string>
+        <string>C:/Users/Jason/Documents/Wyvern-Tail/framework/assets/atlases/entities.tps</string>
         <key>autoSDSettings</key>
         <array>
+            <struct type="AutoSDSettings">
+                <key>scale</key>
+                <double>1</double>
+                <key>extension</key>
+                <string></string>
+                <key>spriteFilter</key>
+                <string></string>
+                <key>acceptFractionalValues</key>
+                <false/>
+                <key>maxTextureSize</key>
+                <QSize>
+                    <key>width</key>
+                    <int>-1</int>
+                    <key>height</key>
+                    <int>-1</int>
+                </QSize>
+            </struct>
             <struct type="AutoSDSettings">
                 <key>scale</key>
                 <double>1</double>
@@ -38,7 +55,7 @@
         <key>dataFormat</key>
         <string>sparrow</string>
         <key>textureFileName</key>
-        <filename>tiles.png</filename>
+        <filename>entities.png</filename>
         <key>flipPVR</key>
         <false/>
         <key>ditherType</key>
@@ -56,7 +73,7 @@
             </struct>
         </struct>
         <key>shapePadding</key>
-        <uint>0</uint>
+        <uint>2</uint>
         <key>jpgQuality</key>
         <uint>80</uint>
         <key>pngOptimizationLevel</key>
@@ -68,7 +85,7 @@
         <key>textureFormat</key>
         <enum type="SettingsBase::TextureFormat">png</enum>
         <key>borderPadding</key>
-        <uint>0</uint>
+        <uint>2</uint>
         <key>maxTextureSize</key>
         <QSize>
             <key>width</key>
@@ -88,7 +105,7 @@
         <key>algorithmSettings</key>
         <struct type="AlgorithmSettings">
             <key>algorithm</key>
-            <enum type="AlgorithmSettings::AlgorithmId">Basic</enum>
+            <enum type="AlgorithmSettings::AlgorithmId">MaxRects</enum>
             <key>freeSizeMode</key>
             <enum type="AlgorithmSettings::AlgorithmFreeSizeMode">Best</enum>
             <key>sizeConstraints</key>
@@ -131,12 +148,12 @@
             <key>data</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>tiles.xml</filename>
+                <filename>entities.xml</filename>
             </struct>
             <key>java</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>tiles.java</filename>
+                <filename>Elements.java</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -151,7 +168,7 @@
             <string></string>
         </struct>
         <key>autoAliasEnabled</key>
-        <false/>
+        <true/>
         <key>trimSpriteNames</key>
         <false/>
         <key>cleanTransparentPixels</key>
@@ -161,7 +178,7 @@
             <key>scale</key>
             <double>1</double>
             <key>scaleMode</key>
-            <enum type="ScaleMode">Smooth</enum>
+            <enum type="ScaleMode">Fast</enum>
             <key>innerPadding</key>
             <uint>0</uint>
             <key>extrude</key>
@@ -169,7 +186,7 @@
             <key>trimThreshold</key>
             <uint>1</uint>
             <key>trimMode</key>
-            <enum type="SpriteSettings::TrimMode">Trim</enum>
+            <enum type="SpriteSettings::TrimMode">None</enum>
             <key>heuristicMask</key>
             <false/>
             <key>pivotPoint</key>
@@ -177,14 +194,8 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>../textures/Tiles/wallunit2.png</filename>
-            <filename>../textures/Tiles/wallunit3.png</filename>
-            <filename>../textures/Tiles/groundtile1.png</filename>
-            <filename>../textures/Tiles/groundtile2.png</filename>
-            <filename>../textures/Tiles/groundtile3.png</filename>
-            <filename>../textures/Tiles/groundtile4.png</filename>
-            <filename>../textures/Tiles/groundtile5.png</filename>
-            <filename>../textures/Tiles/wallunit1.png</filename>
+            <filename>../textures/Props</filename>
+            <filename>../textures/Helmut</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

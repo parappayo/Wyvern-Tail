@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
+<!-- $TexturePacker:SmartUpdate:ff04b6253ff70307488c7a6d80da7a43:e4736a00051b5791efec152389bafc9a:9c5786fa36836cf7d9d5331f245a2081$ -->
+<TextureAtlas imagePath="entities.png">
+    <SubTexture name="barrel_idle1" x="2" y="170" width="32" height="32"/>
+    <SubTexture name="bookshelf" x="2" y="2" width="32" height="64"/>
+    <SubTexture name="crate" x="70" y="104" width="32" height="32"/>
+    <SubTexture name="helmut_idle_down1" x="2" y="136" width="32" height="32"/>
+    <SubTexture name="helmut_idle_left1" x="36" y="104" width="32" height="32"/>
+    <SubTexture name="helmut_idle_right1" x="70" y="70" width="32" height="32"/>
+    <SubTexture name="helmut_idle_up1" x="2" y="102" width="32" height="32"/>
+    <SubTexture name="helmut_walk_down1" x="2" y="136" width="32" height="32"/>
+    <SubTexture name="helmut_walk_down2" x="36" y="70" width="32" height="32"/>
+    <SubTexture name="helmut_walk_down3" x="2" y="136" width="32" height="32"/>
+    <SubTexture name="helmut_walk_down4" x="70" y="36" width="32" height="32"/>
+    <SubTexture name="helmut_walk_left1" x="36" y="104" width="32" height="32"/>
+    <SubTexture name="helmut_walk_left2" x="2" y="68" width="32" height="32"/>
+    <SubTexture name="helmut_walk_left3" x="36" y="104" width="32" height="32"/>
+    <SubTexture name="helmut_walk_left4" x="2" y="68" width="32" height="32"/>
+    <SubTexture name="helmut_walk_right1" x="70" y="70" width="32" height="32"/>
+    <SubTexture name="helmut_walk_right2" x="36" y="36" width="32" height="32"/>
+    <SubTexture name="helmut_walk_right3" x="70" y="70" width="32" height="32"/>
+    <SubTexture name="helmut_walk_right4" x="36" y="36" width="32" height="32"/>
+    <SubTexture name="helmut_walk_up1" x="2" y="102" width="32" height="32"/>
+    <SubTexture name="helmut_walk_up2" x="70" y="2" width="32" height="32"/>
+    <SubTexture name="helmut_walk_up3" x="2" y="102" width="32" height="32"/>
+    <SubTexture name="helmut_walk_up4" x="36" y="2" width="32" height="32"/>
+</TextureAtlas>
