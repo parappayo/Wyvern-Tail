@@ -170,7 +170,7 @@ package
 				Vector.<Class>([ Position2D, wyverntail.core.Sprite, CellCollider ]),
 				{
 					parentSprite : _gameplaySprite,
-					//texture : Assets.EntitiesAtlas.getTexture(name), // TODO: add this
+					texture : Assets.EntitiesAtlas.getTexture(name),
 					width : Settings.TileWidth,
 					height : Settings.TileHeight,
 					cellgrid : cellgrid

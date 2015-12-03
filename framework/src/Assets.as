@@ -40,6 +40,12 @@ package
 		private static var TilesXML :Class;
 		public static var TilesAtlas :TextureAtlas;
 
+		[Embed(source="../assets/atlases/entities.png")]
+		private static var EntitiesImg :Class;
+		[Embed(source="../assets/atlases/entities.xml", mimeType="application/octet-stream")]
+		private static var EntitiesXML :Class;
+		public static var EntitiesAtlas :TextureAtlas;
+
 		static public function init() :void
 		{
 			LegalScreenTexture = Texture.fromBitmap(new LegalScreenImg());
@@ -49,8 +55,9 @@ package
 			VictoryScreenTexture = Texture.fromBitmap(new VictoryScreenImg());
 			DialogueScreenTexture = Texture.fromBitmap(new DialogueScreenImg());
 			LoadingScreenTexture = Texture.fromBitmap(new LoadingScreenImg());
-			
+
 			TilesAtlas = new TextureAtlas(Texture.fromBitmap(new TilesImg), XML(new TilesXML()));
+			EntitiesAtlas = new TextureAtlas(Texture.fromBitmap(new EntitiesImg), XML(new TilesXML()));
 		}
 		
 	} // class

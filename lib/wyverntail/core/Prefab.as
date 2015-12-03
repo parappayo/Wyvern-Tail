@@ -38,7 +38,7 @@ package wyverntail.core
 
 		static public function spawn(scene :Scene, prefabID :String, spawnArgs :Object = null) :Entity
 		{
-			var retval :Entity = new Entity(scene);
+			var retval :Entity = new Entity(scene, prefabID);
 			scene.add(retval);
 
 			if (spawnArgs == null) { spawnArgs = { }; }

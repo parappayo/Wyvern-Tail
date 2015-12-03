@@ -17,9 +17,13 @@ package wyverntail.core
 		
 		protected var _components :Dictionary;
 		
-		public function Entity(scene :Scene)
+		protected var _prefabID :String;
+		public function get prefabID() :String { return _prefabID; }
+
+		public function Entity(scene :Scene, prefabID :String = "")
 		{
 			_scene = scene;
+			_prefabID = prefabID;
 			_components = new Dictionary();
 		}
 		

@@ -34,7 +34,13 @@ package wyverntail.core
 		override public function start(prefabArgs :Object, spawnArgs :Object) :void
 		{
 			_pos = getComponent(Position2D) as Position2D;
-			
+
+			if (!prefabArgs.texture)
+			{
+				trace("error: Sprite component has no texture,", _entity.prefabID);
+				return;
+			}
+
 			var img :Image = new Image(prefabArgs.texture);
 			img.width = prefabArgs.width;
 			img.height = prefabArgs.height;
