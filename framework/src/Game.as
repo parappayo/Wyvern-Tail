@@ -12,7 +12,7 @@ package
 	import wyverntail.ogmo.*;
 	import wyverntail.collision.*;
 	import common.*;
-	
+
 	import ui.flows.RootFlow;
 	import ui.flows.FlowStates;
 
@@ -21,7 +21,7 @@ package
 		import flash.desktop.NativeApplication;
 	}
 
-	public class Game extends starling.display.Sprite
+	public class Game extends starling.display.Sprite implements SignalHandler
 	{
 		private var _rootFlow :RootFlow;
 		
@@ -144,7 +144,7 @@ package
 			Prefab.define("player_spawn",
 				Vector.<Class>([ Position2D, PlayerTeleportDestination ]),
 				{ player : player } );
-				
+
 			Prefab.define("level_transition",
 				Vector.<Class>([ Position2D, ProximityTrigger ]),
 				{

@@ -1,8 +1,16 @@
+//
+//	Wyvern Tail Project
+//  Copyright 2015 Jason Estey
+//
+//	This program is free software. You can redistribute and/or modify it
+//	in accordance with the terms of the accompanying license agreement.
+//
+
 package common
 {
+	import wyverntail.core.*;
 	import wyverntail.collision.CellGrid;
 	import wyverntail.collision.Hitbox;
-	import wyverntail.core.*;
 	
 	public class Movement4Way extends Component
 	{

@@ -1,17 +1,25 @@
+//
+//	Wyvern Tail Project
+//  Copyright 2015 Jason Estey
+//
+//	This program is free software. You can redistribute and/or modify it
+//	in accordance with the terms of the accompanying license agreement.
+//
+
 package common 
 {
 	import wyverntail.core.*;
 	
 	public class PlayerTeleportDestination extends Component
 	{
-		private var _game :Game;
+		private var _game :SignalHandler;
 		private var _name :String;
 		private var _pos :Position2D;
 		private var _playerPos :Position2D;
 		
 		override public function start() :void
 		{
-			_game = getProperty("game") as Game;
+			_game = getProperty("game") as SignalHandler;
 			_name = getProperty("name") as String;
 			_pos = getComponent(Position2D) as Position2D;
 

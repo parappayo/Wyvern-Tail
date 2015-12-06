@@ -1,15 +1,16 @@
 //
 //	Wyvern Tail Project
-//  Copyright 2014 Jason Estey
+//  Copyright 2015 Jason Estey
 //
 //	This program is free software. You can redistribute and/or modify it
 //	in accordance with the terms of the accompanying license agreement.
 //
 
-package wyverntail.core 
+package common
 {
 	import flash.geom.Rectangle;
-	
+	import wyverntail.core.*;
+
 	public class CameraPusher extends Component
 	{
 		private var _pos :Position2D;
@@ -32,7 +33,7 @@ package wyverntail.core
 		{
 			var dx :Number = _pos.worldX - _camera.worldX;
 			var dy :Number = _pos.worldY - _camera.worldY;
-			
+
 			if (dx < _deadzone.left)
 			{
 				_camera.worldX = _pos.worldX + _deadzone.right;
@@ -41,7 +42,7 @@ package wyverntail.core
 			{
 				_camera.worldX = _pos.worldX + _deadzone.left;
 			}
-			
+
 			if (dy < _deadzone.top)
 			{
 				_camera.worldY = _pos.worldY + _deadzone.bottom;

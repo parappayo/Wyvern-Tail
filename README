@@ -19,23 +19,17 @@ There are two major components to this package,
 
 The library contains the core functionality of the Wyvern-Tail project.
 Under library/core there are the classes the define the Entity-Component
-architecture, as well as core types such as Prefab, Camera, Flow, and other
-such game engine systems.
+architecture, as well as core types.
 
 The library/ogmo directory contains classes specific to Wyvern-Tail's Ogmo
-integration systems and are not depended on by any of the other library
-classes.  Ogmo Editor is not strictly necessary to use these classes since
-the data file formats are straight-forward.
-
-The library/common directory provides non-essential helper classes that are
-not specific to any project.  This part of the library is a work in progress
-and is intended to speed up rapid prototyping with some common game design
-behaviours.
+integration systems and are not depended on by the other library classes.
+Ogmo Editor is not strictly necessary to use these classes since the data file
+formats are straight-forward.
 
 The framework demonstrates the use of the library and is meant to be forked
 (copied and modified) to suit your project.  Under framework/src there is
 core application code, under framework/src/ui there is a sample UI flow
-system, and under framework/src/common there are some sample utility classes.
+system, and under framework/src/common there are useful utility classes.
 
 This project's home is on GitHub,
 

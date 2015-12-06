@@ -1,3 +1,11 @@
+//
+//	Wyvern Tail Project
+//  Copyright 2015 Jason Estey
+//
+//	This program is free software. You can redistribute and/or modify it
+//	in accordance with the terms of the accompanying license agreement.
+//
+
 package common 
 {
 	import wyverntail.core.*;
@@ -6,7 +14,7 @@ package common
 	{
 		public var spawnArgs :Object;
 
-		private var _game :Game;
+		private var _game :SignalHandler;
 		private var _signal :int;
 		private var _signalArgs :Object;
 		private var _pos :Position2D;
@@ -19,7 +27,7 @@ package common
 		{
 			this.spawnArgs = spawnArgs;
 
-			_game = getProperty("game") as Game;
+			_game = getProperty("game") as SignalHandler;
 			_signal = getProperty("signal") as int;
 			_pos = getComponent(Position2D) as Position2D;
 			var player :Entity = getProperty("player") as Entity;
