@@ -1,0 +1,4 @@
+framework/bin/*
+framework/obj/*
+*.sublime-project
+*.sublime-workspace
