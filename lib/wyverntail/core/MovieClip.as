@@ -86,14 +86,14 @@ package wyverntail.core
 			_pos = null;
 		}
 		
-		override public function start(prefabArgs :Object, spawnArgs :Object) :void
+		override public function start() :void
 		{
 			_pos = getComponent(Position2D) as Position2D;
 			
-			setParent(prefabArgs.parentSprite);
+			setParent(getProperty("parentSprite") as Sprite);
 			
-			_pivotOffsetX = prefabArgs.pivotOffsetX == null ? 0 : prefabArgs.pivotOffsetX;
-			_pivotOffsetY = prefabArgs.pivotOffsetY == null ? 0 : prefabArgs.pivotOffsetY;
+			_pivotOffsetX = hasProperty("pivotOffsetX") ? getProperty("pivotOffsetX") as Number : 0;
+			_pivotOffsetY = hasProperty("pivotOffsetY") ? getProperty("pivotOffsetY") as Number : 0;
 		}
 		
 		override public function update(elapsed :Number) :void

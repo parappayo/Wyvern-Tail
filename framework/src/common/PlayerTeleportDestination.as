@@ -9,14 +9,16 @@ package common
 		private var _pos :Position2D;
 		private var _playerPos :Position2D;
 		
-		override public function start(prefabArgs :Object, spawnArgs :Object) :void
+		override public function start() :void
 		{
-			_game = prefabArgs.game;
-			_name = spawnArgs.name;
+			_game = getProperty("game") as Game;
+			_name = getProperty("name") as String;
 			_pos = getComponent(Position2D) as Position2D;
-			_playerPos = prefabArgs.player.getComponent(Position2D) as Position2D;
+
+			var player :Entity = getProperty("player") as Entity;
+			_playerPos = player.getComponent(Position2D) as Position2D;
 		}
-		
+
 		override public function handleSignal(signal :int, sender :Object, args :Object) :Boolean
 		{
 			if (signal == Signals.TELEPORT_PLAYER)
@@ -30,10 +32,10 @@ package common
 					return true;
 				}
 			}
-			
+
 			return false;
 		}
-		
+
 	} // class
 
 } // package

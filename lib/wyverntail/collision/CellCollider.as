@@ -23,10 +23,10 @@ package wyverntail.collision
 		private var _oldWorldX :Number;
 		private var _oldWorldY :Number;
 		
-		override public function start(prefabArgs :Object, spawnArgs :Object) :void
+		override public function start() :void
 		{
 			_pos = getComponent(Position2D) as Position2D;
-			_cellgrid = prefabArgs.cellgrid;
+			_cellgrid = getProperty("cellgrid") as CellGrid;
 			
 			_oldWorldX = _pos.worldX;
 			_oldWorldY = _pos.worldY;

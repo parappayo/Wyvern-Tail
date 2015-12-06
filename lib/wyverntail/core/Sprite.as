@@ -11,6 +11,7 @@ package wyverntail.core
 	import starling.display.Image;
 	import starling.display.Sprite;
 	import starling.display.DisplayObject;
+	import starling.textures.Texture;
 
 	public class Sprite extends Component
 	{
@@ -31,19 +32,20 @@ package wyverntail.core
 			_pos = null;
 		}
 		
-		override public function start(prefabArgs :Object, spawnArgs :Object) :void
+		override public function start() :void
 		{
 			_pos = getComponent(Position2D) as Position2D;
 
-			if (!prefabArgs.texture)
+			var texture :Texture = getProperty("texture") as Texture;
+			if (!texture)
 			{
-				trace("error: Sprite component has no texture,", _entity.prefabID);
+				trace("error: Sprite component has no texture,", _entity.prefab.id);
 				return;
 			}
 
-			var img :Image = new Image(prefabArgs.texture);
-			img.width = prefabArgs.width;
-			img.height = prefabArgs.height;
+			var img :Image = new Image(texture);
+			img.width = getProperty("width") as Number;
+			img.height = getProperty("height") as Number;
 			addChild(img);
 
 			if (_pos)
@@ -51,10 +53,11 @@ package wyverntail.core
 				img.pivotX = img.width * 0.5;
 				img.pivotY = img.height * 0.5;
 			}
-			
-			setParent(prefabArgs.parentSprite);
+
+			var parent :starling.display.Sprite = getProperty("parentSprite") as starling.display.Sprite;
+			setParent(parent);
 		}
-		
+
 		override public function update(elapsed :Number) :void
 		{
 			if (_pos == null) { return; }
@@ -72,7 +75,7 @@ package wyverntail.core
 		{
 			_sprite.addChild(displayObject);
 		}
-		
+
 		public function get scaleX() :Number { return _sprite.scaleX; }
 		public function get scaleY() :Number { return _sprite.scaleY; }
 		public function set scaleX(value :Number) :void { _sprite.scaleX = value; }

@@ -14,19 +14,53 @@ package wyverntail.core
 	{
 		protected var _scene :Scene;
 		public function get scene() :Scene { return _scene; }
-		
-		protected var _components :Dictionary;
-		
-		protected var _prefabID :String;
-		public function get prefabID() :String { return _prefabID; }
 
-		public function Entity(scene :Scene, prefabID :String = "")
+		protected var _components :Dictionary;
+
+		protected var _prefab :Prefab;
+		public function get prefab() :Prefab { return _prefab; }
+
+		protected var _prefabArgs :Object;
+		public function get prefabArgs() :Object { return _prefabArgs; }
+		protected var _spawnArgs :Object;
+		public function get spawnArgs() :Object { return _spawnArgs; }
+
+		public function Entity(scene :Scene, prefab :Prefab, spawnArgs :Object)
 		{
 			_scene = scene;
-			_prefabID = prefabID;
+			_prefab = prefab;
+
+			_prefabArgs = prefab != null ? prefab.args : null;
+			_spawnArgs = spawnArgs;
+
 			_components = new Dictionary();
 		}
+
+		public function getProperty(key :String) :Object
+		{
+			if (_spawnArgs != null && _spawnArgs.hasOwnProperty(key))
+			{
+				return _spawnArgs[key];
+			}
+
+			if (_prefabArgs != null)
+			{
+				return _prefabArgs[key];
+			}
+
+			return null;
+		}
 		
+		public function hasProperty(key :String) :Object
+		{
+			if (_spawnArgs != null && _spawnArgs.hasOwnProperty(key))
+			{
+				return true;
+			}
+
+			return _prefabArgs.hasOwnProperty(key);
+		}
+
 		public function destroy() :void
 		{
 			for each (var component :Component in _components)
@@ -36,7 +70,7 @@ package wyverntail.core
 			}
 			_components = null;
 		}
-		
+
 		public function update(elapsed :Number) :void
 		{
 			for each (var component :Component in _components)
@@ -44,7 +78,7 @@ package wyverntail.core
 				component.update(elapsed);
 			}
 		}
-		
+
 		public function handleSignal(signal :int, sender :Object, args :Object) :Boolean
 		{
 			var retval :Boolean = false;
@@ -55,7 +89,7 @@ package wyverntail.core
 			}
 			return retval;
 		}
-		
+
 		public function attachComponent(componentType :Class) :Component
 		{
 			if (_components.hasOwnProperty(componentType))
@@ -79,7 +113,7 @@ package wyverntail.core
 		{
 			return _components[componentType] as Component;
 		}
-		
+
 		public function containsComponent(component :Object) :Boolean
 		{
 			for each (var c :Component in _components)

@@ -25,10 +25,16 @@ package wyverntail.core
 			_position = new Point();
 		}
 		
-		override public function start(prefabArgs :Object, spawnArgs :Object) :void
+		override public function start() :void
 		{
-			if (spawnArgs && spawnArgs.worldX) { worldX = spawnArgs.worldX; }
-			if (spawnArgs && spawnArgs.worldY) { worldY = spawnArgs.worldY; }
+			if (hasProperty("worldX"))
+			{
+				worldX = getProperty("worldX") as Number;
+			}
+			if (hasProperty("worldY"))
+			{
+				worldX = getProperty("worldY") as Number;
+			}
 		}
 		
 		public function get parent() :Position2D { return _parent; }

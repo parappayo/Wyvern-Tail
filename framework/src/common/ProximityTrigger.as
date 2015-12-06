@@ -5,7 +5,7 @@ package common
 	public class ProximityTrigger extends Component
 	{
 		public var spawnArgs :Object;
-		
+
 		private var _game :Game;
 		private var _signal :int;
 		private var _signalArgs :Object;
@@ -15,17 +15,18 @@ package common
 		private var _isTriggered :Boolean;
 		private var _canRepeat :Boolean;
 		
-		override public function start(prefabArgs :Object, spawnArgs :Object) :void
+		override public function start() :void
 		{
 			this.spawnArgs = spawnArgs;
-			
-			_game = prefabArgs.game;
-			_signal = prefabArgs.signal;
+
+			_game = getProperty("game") as Game;
+			_signal = getProperty("signal") as int;
 			_pos = getComponent(Position2D) as Position2D;
-			_playerPos = prefabArgs.player.getComponent(Position2D) as Position2D;
-			_triggerRadius = prefabArgs.triggerRadius;
+			var player :Entity = getProperty("player") as Entity;
+			_playerPos = player.getComponent(Position2D) as Position2D;
+			_triggerRadius = getProperty("triggerRadius") as Number;
 			_isTriggered = false;
-			_canRepeat = prefabArgs.canRepeat;
+			_canRepeat = getProperty("canRepeat") as Boolean;
 		}
 		
 		override public function update(elapsed :Number) :void
@@ -45,7 +46,7 @@ package common
 				_isTriggered = false;
 			}
 		}
-		
+
 	} // class
 
 } // package

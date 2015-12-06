@@ -31,7 +31,7 @@ package wyverntail.collision
 			_showDebug = false;
 		}
 
-		override public function start(prefabArgs :Object, spawnArgs :Object) :void
+		override public function start() :void
 		{
 			_pos = getComponent(Position2D) as Position2D;
 			_clip = getComponent(MovieClip) as MovieClip;

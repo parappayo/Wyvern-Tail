@@ -15,17 +15,19 @@ package wyverntail.core
 		private var _pos :Position2D;
 		private var _camera :Camera;
 		private var _deadzone :Rectangle
-		
-		override public function start(prefabArgs :Object, spawnArgs :Object) :void
+
+		override public function start() :void
 		{
+			var cameraEntity :Entity = getProperty("camera") as Entity;
+
 			_pos = getComponent(Position2D) as Position2D;
-			_camera = prefabArgs.camera.getComponent(Camera) as Camera;
-			_deadzone = prefabArgs.cameraPusherDeadzone;
-			
+			_camera = cameraEntity.getComponent(Camera) as Camera;
+			_deadzone = getProperty("cameraPusherDeadzone") as Rectangle;
+
 			_camera.worldX = _pos.worldX;
 			_camera.worldY = _pos.worldY;
 		}
-		
+
 		override public function update(elapsed :Number) :void
 		{
 			var dx :Number = _pos.worldX - _camera.worldX;
@@ -59,7 +61,7 @@ package wyverntail.core
 			}
 			return false;
 		}
-		
+
 	} // class
 
 } // package

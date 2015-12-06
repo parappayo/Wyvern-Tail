@@ -21,12 +21,12 @@ package common
 		private var _hitbox :Hitbox;
 		private var _walkmesh :CellGrid;
 
-		override public function start(prefabArgs :Object, spawnArgs :Object) :void
+		override public function start() :void
 		{
 			_pos = getComponent(Position2D) as Position2D;
 			_clip = getComponent(Sprite) as Sprite;
 			_hitbox = getComponent(Hitbox) as Hitbox;
-			_walkmesh = prefabArgs.walkmesh;
+			_walkmesh = getProperty("walkmesh") as CellGrid;
 		}
 		
 		public function get isMoving() :Boolean

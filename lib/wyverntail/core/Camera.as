@@ -15,11 +15,11 @@ package wyverntail.core
 		private var _pos :Position2D;
 		private var _target :DisplayObject;
 		
-		override public function start(prefabArgs :Object, spawnArgs :Object) :void
+		override public function start() :void
 		{
 			_pos = getComponent(Position2D) as Position2D;
 			
-			_target = spawnArgs.target;
+			_target = getProperty("target") as DisplayObject;
 		}
 		
 		override public function update(elapsed :Number) :void
