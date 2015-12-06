@@ -15,7 +15,17 @@ package wyverntail.ogmo
 	
 	public class TileLayer extends Layer implements TileData
 	{
-		public var tilesAtlas :TextureAtlas;
+		private var _tileAtlas :TextureAtlas;
+		private var _tileNames :Vector.<String>;
+		public function get tileAtlas() :TextureAtlas
+		{
+			return _tileAtlas;
+		}
+		public function set tileAtlas(value :TextureAtlas) :void
+		{
+			_tileAtlas = value;
+			_tileNames = _tileAtlas.getNames("");
+		}
 
 		// in tiles
 		private var _width :int;
@@ -32,7 +42,7 @@ package wyverntail.ogmo
 			
 			_tileData = new Vector.<int>(_width * _height);			
 		}
-		
+
 		override public function init(data :XML) :void
 		{
 			for each (var tileXML :XML in data.children())
@@ -50,22 +60,9 @@ package wyverntail.ogmo
 		public function getTileTexture(x :int, y :int) :Image
 		{
 			var i :int = y * _width + x;
-			var textureName :String = "tile";
-			
-			if (_tileData[i] < 10)
-			{
-				textureName += "00" + _tileData[i];
-			}
-			else if (_tileData[i] < 100)
-			{
-				textureName += "0" + _tileData[i];
-			}
-			else
-			{
-				textureName += _tileData[i];
-			}
-			
-			var tex :Texture = tilesAtlas.getTexture(textureName);
+			var textureName :String = _tileNames[_tileData[i]];
+
+			var tex :Texture = tileAtlas.getTexture(textureName);
 			if (!tex)
 			{
 				trace("unknown texture: " + textureName);

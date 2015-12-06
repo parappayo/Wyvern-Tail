@@ -110,7 +110,7 @@ package
 			level.init(levelData);
 			
 			var backgroundLayer :TileLayer = level.layers["background"] as TileLayer;
-			backgroundLayer.tilesAtlas = Assets.TilesAtlas;			
+			backgroundLayer.tileAtlas = Assets.TilesAtlas;
 			var background :TileSprite = new TileSprite();
 			background.setTiles(level.layers["background"] as TileData);
 			background.setParent(_gameplaySprite);
