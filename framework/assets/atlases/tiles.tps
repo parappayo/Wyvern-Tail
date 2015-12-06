@@ -56,7 +56,7 @@
             </struct>
         </struct>
         <key>shapePadding</key>
-        <uint>0</uint>
+        <uint>2</uint>
         <key>jpgQuality</key>
         <uint>80</uint>
         <key>pngOptimizationLevel</key>
@@ -105,7 +105,7 @@
             <key>basic</key>
             <struct type="AlgorithmBasicSettings">
                 <key>sortBy</key>
-                <enum type="AlgorithmBasicSettings::SortBy">Best</enum>
+                <enum type="AlgorithmBasicSettings::SortBy">Name</enum>
                 <key>order</key>
                 <enum type="AlgorithmBasicSettings::Order">Ascending</enum>
             </struct>
@@ -177,14 +177,7 @@
         </struct>
         <key>fileList</key>
         <array>
-            <filename>../textures/Tiles/wallunit2.png</filename>
-            <filename>../textures/Tiles/wallunit3.png</filename>
-            <filename>../textures/Tiles/groundtile1.png</filename>
-            <filename>../textures/Tiles/groundtile2.png</filename>
-            <filename>../textures/Tiles/groundtile3.png</filename>
-            <filename>../textures/Tiles/groundtile4.png</filename>
-            <filename>../textures/Tiles/groundtile5.png</filename>
-            <filename>../textures/Tiles/wallunit1.png</filename>
+            <filename>../textures/Tiles</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

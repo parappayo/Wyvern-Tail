@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with TexturePacker http://www.codeandweb.com/texturepacker-->
-<!-- $TexturePacker:SmartUpdate:d6e157d25164e3c6cf6b65a0b08a95ce:ab8ae312b76e3a6eea786a8acd67e18d:8c35c81d6c02a4e8a52d04a540c911af$ -->
+<!-- $TexturePacker:SmartUpdate:8599973699c169050ed16cad68097531:ab8ae312b76e3a6eea786a8acd67e18d:8c35c81d6c02a4e8a52d04a540c911af$ -->
 <TextureAtlas imagePath="tiles.png">
     <SubTexture name="groundtile1" x="0" y="0" width="33" height="32"/>
-    <SubTexture name="groundtile2" x="33" y="0" width="32" height="32"/>
-    <SubTexture name="groundtile3" x="65" y="0" width="32" height="32"/>
-    <SubTexture name="groundtile4" x="0" y="32" width="32" height="32"/>
-    <SubTexture name="groundtile5" x="32" y="32" width="32" height="32"/>
-    <SubTexture name="wallunit1" x="64" y="32" width="32" height="32"/>
-    <SubTexture name="wallunit2" x="96" y="32" width="32" height="32"/>
-    <SubTexture name="wallunit3" x="0" y="64" width="32" height="32"/>
+    <SubTexture name="groundtile2" x="35" y="0" width="32" height="32"/>
+    <SubTexture name="groundtile3" x="69" y="0" width="32" height="32"/>
+    <SubTexture name="groundtile4" x="0" y="34" width="32" height="32"/>
+    <SubTexture name="groundtile5" x="34" y="34" width="32" height="32"/>
+    <SubTexture name="wallunit1" x="68" y="34" width="32" height="32"/>
+    <SubTexture name="wallunit2" x="0" y="68" width="32" height="32"/>
+    <SubTexture name="wallunit3" x="34" y="68" width="32" height="32"/>
 </TextureAtlas>
