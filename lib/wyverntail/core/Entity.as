@@ -12,6 +12,8 @@ package wyverntail.core
 
 	public class Entity
 	{
+		public var parent :Entity;
+
 		protected var _scene :Scene;
 		public function get scene() :Scene { return _scene; }
 

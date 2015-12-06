@@ -27,6 +27,9 @@ package wyverntail.core
 		
 		override public function start() :void
 		{
+			// TODO: if entity parent changes, signal and reset this
+			_parent = _entity.parent != null ? _entity.parent.getComponent(Position2D) as Position2D : null;
+
 			if (hasProperty("worldX"))
 			{
 				worldX = getProperty("worldX") as Number;
@@ -37,9 +40,6 @@ package wyverntail.core
 			}
 		}
 		
-		public function get parent() :Position2D { return _parent; }
-		public function set parent(value :Position2D) :void { _parent = value; }
-
 		public function get worldX() :Number
 		{
 			return _position.x + (_parent == null ? 0 : _parent.worldX);
