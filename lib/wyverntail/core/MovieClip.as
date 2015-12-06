@@ -18,7 +18,7 @@ package wyverntail.core
 	public class MovieClip extends Component
 	{
 		private var _parent :starling.display.Sprite;
-		protected var _pos :Position2D;
+		protected var _pos :Position;
 		private var _animationClips :Dictionary;
 		
 		// details on the currently playing animation
@@ -88,7 +88,7 @@ package wyverntail.core
 		
 		override public function start() :void
 		{
-			_pos = getComponent(Position2D) as Position2D;
+			_pos = getComponent(Position) as Position;
 			
 			setParent(getProperty("parentSprite") as starling.display.Sprite);
 			

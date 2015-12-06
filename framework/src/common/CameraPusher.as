@@ -13,7 +13,7 @@ package common
 
 	public class CameraPusher extends Component
 	{
-		private var _pos :Position2D;
+		private var _pos :Position;
 		private var _camera :Camera;
 		private var _deadzone :Rectangle
 
@@ -21,7 +21,7 @@ package common
 		{
 			var cameraEntity :Entity = getProperty("camera") as Entity;
 
-			_pos = getComponent(Position2D) as Position2D;
+			_pos = getComponent(Position) as Position;
 			_camera = cameraEntity.getComponent(Camera) as Camera;
 			_deadzone = getProperty("cameraPusherDeadzone") as Rectangle;
 

@@ -14,17 +14,17 @@ package common
 	{
 		private var _game :SignalHandler;
 		private var _name :String;
-		private var _pos :Position2D;
-		private var _playerPos :Position2D;
+		private var _pos :Position;
+		private var _playerPos :Position;
 		
 		override public function start() :void
 		{
 			_game = getProperty("game") as SignalHandler;
 			_name = getProperty("name") as String;
-			_pos = getComponent(Position2D) as Position2D;
+			_pos = getComponent(Position) as Position;
 
 			var player :Entity = getProperty("player") as Entity;
-			_playerPos = player.getComponent(Position2D) as Position2D;
+			_playerPos = player.getComponent(Position) as Position;
 		}
 
 		override public function handleSignal(signal :int, sender :Object, args :Object) :Boolean

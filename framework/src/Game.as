@@ -120,14 +120,14 @@ package
 			cellgrid.addData(walkmeshLayer.bitstring);
 
 			Prefab.define("camera",
-				Vector.<Class>([ Position2D, Camera ]),
+				Vector.<Class>([ Position, Camera ]),
 				{});
 			var camera :wyverntail.core.Entity = Prefab.spawn(_gameplayScene, "camera", { target : _gameplaySprite } );
 
 			// not all games have a player entity, but this is a reasonable starting point for top-down action games
 			// (you may want to add a Player component for your game's custom player logic)
 			Prefab.define("player",
-				Vector.<Class>([ Position2D, MovieClip, Hitbox, CameraPusher, Movement4Way ]),
+				Vector.<Class>([ Position, MovieClip, Hitbox, CameraPusher, Movement4Way ]),
 				{
 					game : this,
 					parentSprite : _gameplaySprite,
@@ -142,11 +142,11 @@ package
 			var player :wyverntail.core.Entity = Prefab.spawn(_gameplayScene, "player", { worldX : 0, worldY : 0 } );
 			
 			Prefab.define("player_spawn",
-				Vector.<Class>([ Position2D, PlayerTeleportDestination ]),
+				Vector.<Class>([ Position, PlayerTeleportDestination ]),
 				{ player : player } );
 
 			Prefab.define("level_transition",
-				Vector.<Class>([ Position2D, ProximityTrigger ]),
+				Vector.<Class>([ Position, ProximityTrigger ]),
 				{
 					game : this,
 					player : player,
@@ -170,7 +170,7 @@ package
 			var texture :Texture = Assets.EntitiesAtlas.getTexture(name);
 
 			Prefab.define(name,
-				Vector.<Class>([ Position2D, wyverntail.core.Sprite, CellCollider ]),
+				Vector.<Class>([ Position, wyverntail.core.Sprite, CellCollider ]),
 				{
 					parentSprite : _gameplaySprite,
 					texture : texture,

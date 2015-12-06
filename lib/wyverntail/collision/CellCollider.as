@@ -17,7 +17,7 @@ package wyverntail.collision
 	///
 	public class CellCollider extends Component
 	{
-		private var _pos :Position2D;
+		private var _pos :Position;
 		private var _cellgrid :CellGrid;
 		
 		private var _oldWorldX :Number;
@@ -25,7 +25,7 @@ package wyverntail.collision
 		
 		override public function start() :void
 		{
-			_pos = getComponent(Position2D) as Position2D;
+			_pos = getComponent(Position) as Position;
 			_cellgrid = getProperty("cellgrid") as CellGrid;
 			
 			_oldWorldX = _pos.worldX;
@@ -35,7 +35,7 @@ package wyverntail.collision
 		
 		override public function update(elapsed :Number) :void
 		{
-			if (_pos.distanceSquared2f(_oldWorldX, _oldWorldY) > 0.01)
+			if (_pos.distance2DSquared2f(_oldWorldX, _oldWorldY) > 0.01)
 			{
 				_cellgrid.setCollides(_oldWorldX, _oldWorldY, false);
 				_oldWorldX = _pos.worldX;

@@ -24,14 +24,14 @@ package common
 		public var verticalSpeed :Number = 320;
 		public var horizontalSpeed :Number = 320;
 
-		private var _pos :Position2D;
+		private var _pos :Position;
 		private var _clip :Sprite;
 		private var _hitbox :Hitbox;
 		private var _walkmesh :CellGrid;
 
 		override public function start() :void
 		{
-			_pos = getComponent(Position2D) as Position2D;
+			_pos = getComponent(Position) as Position;
 			_clip = getComponent(Sprite) as Sprite;
 			_hitbox = getComponent(Hitbox) as Hitbox;
 			_walkmesh = getProperty("walkmesh") as CellGrid;

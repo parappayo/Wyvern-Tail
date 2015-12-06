@@ -17,8 +17,8 @@ package common
 		private var _game :SignalHandler;
 		private var _signal :int;
 		private var _signalArgs :Object;
-		private var _pos :Position2D;
-		private var _playerPos :Position2D;
+		private var _pos :Position;
+		private var _playerPos :Position;
 		private var _triggerRadius :Number;
 		
 		override public function start() :void
@@ -27,9 +27,9 @@ package common
 			
 			_game = getProperty("game") as SignalHandler;
 			_signal = getProperty("signal") as int;
-			_pos = getComponent(Position2D) as Position2D;
+			_pos = getComponent(Position) as Position;
 			var player :Entity = getProperty("player") as Entity;
-			_playerPos = player.getComponent(Position2D) as Position2D;
+			_playerPos = player.getComponent(Position) as Position;
 			_triggerRadius = getProperty("triggerRadius") as Number;
 		}
 		

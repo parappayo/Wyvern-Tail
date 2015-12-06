@@ -16,7 +16,7 @@ package wyverntail.core
 	public class Sprite extends Component
 	{
 		protected var _sprite :starling.display.Sprite;
-		protected var _pos :Position2D;
+		protected var _pos :Position;
 		
 		public function get sprite() :starling.display.Sprite { return _sprite; }
 
@@ -34,7 +34,7 @@ package wyverntail.core
 		
 		override public function start() :void
 		{
-			_pos = getComponent(Position2D) as Position2D;
+			_pos = getComponent(Position) as Position;
 
 			var texture :Texture = getProperty("texture") as Texture;
 			if (!texture)

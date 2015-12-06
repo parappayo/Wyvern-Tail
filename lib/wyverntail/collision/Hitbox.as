@@ -17,7 +17,7 @@ package wyverntail.collision
 		public var extents :Rectangle;
 		public var useClipExtents :Boolean;
 		
-		protected var _pos :Position2D;
+		protected var _pos :Position;
 		protected var _clip :MovieClip;
 		
 		protected var _targetQuad :Quad;
@@ -33,7 +33,7 @@ package wyverntail.collision
 
 		override public function start() :void
 		{
-			_pos = getComponent(Position2D) as Position2D;
+			_pos = getComponent(Position) as Position;
 			_clip = getComponent(MovieClip) as MovieClip;
 		}
 
