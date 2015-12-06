@@ -11,7 +11,6 @@ package wyverntail.ogmo
 	import starling.display.Image;
 	import starling.textures.Texture;
 	import starling.textures.TextureAtlas;
-	import wyverntail.core.TileData;
 	
 	public class TileLayer extends Layer implements TileData
 	{

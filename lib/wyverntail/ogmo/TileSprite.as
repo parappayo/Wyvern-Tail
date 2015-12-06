@@ -6,9 +6,10 @@
 //	in accordance with the terms of the accompanying license agreement.
 //
 
-package wyverntail.core 
+package wyverntail.ogmo 
 {
 	import starling.display.Image;
+	import wyverntail.core.Sprite;
 	
 	public class TileSprite extends Sprite
 	{
