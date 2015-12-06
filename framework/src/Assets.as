@@ -57,7 +57,7 @@ package
 			LoadingScreenTexture = Texture.fromBitmap(new LoadingScreenImg());
 
 			TilesAtlas = new TextureAtlas(Texture.fromBitmap(new TilesImg), XML(new TilesXML()));
-			EntitiesAtlas = new TextureAtlas(Texture.fromBitmap(new EntitiesImg), XML(new TilesXML()));
+			EntitiesAtlas = new TextureAtlas(Texture.fromBitmap(new EntitiesImg), XML(new EntitiesXML()));
 		}
 		
 	} // class
