@@ -7,7 +7,7 @@ package
 	import starling.display.Image;
 	import starling.textures.Texture;
 	import starling.events.EnterFrameEvent;
-		
+
 	import wyverntail.core.*;
 	import wyverntail.ogmo.*;
 	import wyverntail.collision.*;
@@ -157,6 +157,7 @@ package
 			
 			addPropPrefab("barrel", cellgrid);
 			addPropPrefab("crate", cellgrid);
+			addPropPrefab("bookshelf", cellgrid);
 
 			var entityLayer :EntityLayer = level.layers["entities"] as EntityLayer;
 			entityLayer.spawn(_gameplayScene);
@@ -166,13 +167,15 @@ package
 		
 		protected function addPropPrefab(name :String, cellgrid :CellGrid) :void
 		{
+			var texture :Texture = Assets.EntitiesAtlas.getTexture(name);
+
 			Prefab.define(name,
 				Vector.<Class>([ Position2D, wyverntail.core.Sprite, CellCollider ]),
 				{
 					parentSprite : _gameplaySprite,
-					texture : Assets.EntitiesAtlas.getTexture(name),
-					width : Settings.TileWidth,
-					height : Settings.TileHeight,
+					texture : texture,
+					width : texture.width,
+					height : texture.height,
 					cellgrid : cellgrid
 				});
 		}
