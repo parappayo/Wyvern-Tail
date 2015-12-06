@@ -33,7 +33,7 @@ package wyverntail.core
 			}
 			if (hasProperty("worldY"))
 			{
-				worldX = getProperty("worldY") as Number;
+				worldY = getProperty("worldY") as Number;
 			}
 		}
 		
