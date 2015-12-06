@@ -90,7 +90,7 @@ package wyverntail.core
 		{
 			_pos = getComponent(Position2D) as Position2D;
 			
-			setParent(getProperty("parentSprite") as Sprite);
+			setParent(getProperty("parentSprite") as starling.display.Sprite);
 			
 			_pivotOffsetX = hasProperty("pivotOffsetX") ? getProperty("pivotOffsetX") as Number : 0;
 			_pivotOffsetY = hasProperty("pivotOffsetY") ? getProperty("pivotOffsetY") as Number : 0;
