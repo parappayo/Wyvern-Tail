@@ -58,7 +58,19 @@ package wyverntail.core
 
 			return retval;
 		}
-		
+
+		static public function setProperty(prefabID :String, propertyName :String, propertyValue :Object) :void
+		{
+			var prefab :Prefab = prefabs[prefabID];
+
+			if (prefab == null)
+			{
+				trace("error: tried to set property on unknown prefab", prefab);
+			}
+
+			prefab.args[propertyName] = propertyValue;
+		}
+
 	} // class
 
 } // package

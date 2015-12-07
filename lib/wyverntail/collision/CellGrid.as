@@ -14,15 +14,15 @@ package wyverntail.collision
 		private var _gridWidth :int;
 		private var _cellWidth :Number;
 		private var _cellHeight :Number;
-		
-		public function CellGrid(gridWidth :int, cellWidth :Number, cellHeight :Number) 
+
+		public function init(gridWidth :int, cellWidth :Number, cellHeight :Number) :void
 		{
 			_data = new Object();
 			_gridWidth = gridWidth + 1; // +1 is a hack because there are newlines in the bitstring
 			_cellWidth = cellWidth;
 			_cellHeight = cellHeight;
 		}
-		
+
 		public function addData(bitstring :String, obstacleChar :String = "1") :void
 		{
 			for (var i :int = 0; i < bitstring.length; i++)
@@ -63,7 +63,7 @@ package wyverntail.collision
 		{
 			_data[getCellIndex(worldX, worldY)] = collides;
 		}
-		
+
 		public function collides(worldX :Number, worldY :Number) :Boolean
 		{
 			return _data[getCellIndex(worldX, worldY)];
