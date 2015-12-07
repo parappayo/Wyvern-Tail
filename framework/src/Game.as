@@ -127,7 +127,7 @@ package
 			// not all games have a player entity, but this is a reasonable starting point for top-down action games
 			// (you may want to add a Player component for your game's custom player logic)
 			Prefab.define("player",
-				Vector.<Class>([ Position, MovieClip, Hitbox, CameraPusher, Movement4Way ]),
+				Vector.<Class>([ Position, MovieClip, Hitbox, CameraPusher, Movement4Way, Animate4Way ]),
 				{
 					game : this,
 					parentSprite : _gameplaySprite,
@@ -140,7 +140,17 @@ package
 							Settings.ScreenHeight * 0.6 )
 				});
 			var player :wyverntail.core.Entity = Prefab.spawn(_gameplayScene, "player", { worldX : 0, worldY : 0 } );
-			
+
+			var playerClip :wyverntail.core.MovieClip = player.getComponent(wyverntail.core.MovieClip) as wyverntail.core.MovieClip;
+			playerClip.addAnimation("idle_up", Assets.EntitiesAtlas.getTextures("helmut_idle_up"), Settings.SpriteFramerate);
+			playerClip.addAnimation("walk_up", Assets.EntitiesAtlas.getTextures("helmut_walk_up"), Settings.SpriteFramerate);
+			playerClip.addAnimation("idle_down", Assets.EntitiesAtlas.getTextures("helmut_idle_down"), Settings.SpriteFramerate);
+			playerClip.addAnimation("walk_down", Assets.EntitiesAtlas.getTextures("helmut_walk_down"), Settings.SpriteFramerate);
+			playerClip.addAnimation("idle_left", Assets.EntitiesAtlas.getTextures("helmut_idle_left"), Settings.SpriteFramerate);
+			playerClip.addAnimation("walk_left", Assets.EntitiesAtlas.getTextures("helmut_walk_left"), Settings.SpriteFramerate);
+			playerClip.addAnimation("idle_right", Assets.EntitiesAtlas.getTextures("helmut_idle_right"), Settings.SpriteFramerate);
+			playerClip.addAnimation("walk_right", Assets.EntitiesAtlas.getTextures("helmut_walk_right"), Settings.SpriteFramerate);
+
 			Prefab.define("player_spawn",
 				Vector.<Class>([ Position, PlayerTeleportDestination ]),
 				{ player : player } );

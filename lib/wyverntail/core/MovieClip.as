@@ -153,7 +153,7 @@ package wyverntail.core
 
 			if (!clip)
 			{
-				throw new Error("unknown animation name given");
+				throw new Error("unknown animation name given,", name);
 				return;
 			}
 			if (!_parent)

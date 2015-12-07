@@ -18,7 +18,7 @@ package common
 		private var _moveDown :Boolean;		
 		private var _moveLeft :Boolean;
 		private var _moveRight :Boolean;
-		
+
 		// movement speed in pixels per second
 		// TODO: should be a prefab argument
 		public var verticalSpeed :Number = 320;
@@ -36,12 +36,16 @@ package common
 			_hitbox = getComponent(Hitbox) as Hitbox;
 			_walkmesh = getProperty("walkmesh") as CellGrid;
 		}
-		
+
 		public function get isMoving() :Boolean
 		{
 			return _moveUp || _moveDown || _moveLeft || _moveRight;
 		}
-		
+		public function get isMovingUp() :Boolean { return _moveUp; }
+		public function get isMovingDown() :Boolean { return _moveDown; }
+		public function get isMovingLeft() :Boolean { return _moveLeft; }
+		public function get isMovingRight() :Boolean { return _moveRight; }
+
 		override public function update(elapsed :Number) :void
 		{
 			if (!enabled) { return; }
@@ -99,17 +103,17 @@ package common
 			if (!collidesY) { _pos.worldY = newY; }
 			
 			// flip the sprite when moving left
-			if (_clip)
-			{
-				if (_moveRight)
-				{
-					_clip.scaleX = 1;
-				}
-				else if (_moveLeft)
-				{
-					_clip.scaleX = -1;
-				}
-			}
+//			if (_clip)
+//			{
+//				if (_moveRight)
+//				{
+//					_clip.scaleX = 1;
+//				}
+//				else if (_moveLeft)
+//				{
+//					_clip.scaleX = -1;
+//				}
+//			}
 		}
 		
 		public function resetState() :void
