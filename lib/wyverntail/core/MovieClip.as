@@ -89,13 +89,24 @@ package wyverntail.core
 		override public function start() :void
 		{
 			_pos = getComponent(Position) as Position;
-			
+
 			setParent(getProperty("parentSprite") as starling.display.Sprite);
-			
+
 			_pivotOffsetX = hasProperty("pivotOffsetX") ? getProperty("pivotOffsetX") as Number : 0;
 			_pivotOffsetY = hasProperty("pivotOffsetY") ? getProperty("pivotOffsetY") as Number : 0;
+
+			if (hasProperty("animations"))
+			{
+				var animations :Object = getProperty("animations");
+				for (var animName :String in animations)
+				{
+					if (!animations.hasOwnProperty(animName)) { continue; }
+					var animParams :Object = animations[animName];
+					addAnimation(animName, Assets.EntitiesAtlas.getTextures(animParams.prefix), animParams.framerate);
+				}
+			}
 		}
-		
+
 		override public function update(elapsed :Number) :void
 		{
 			if (_clip == null) { return; }

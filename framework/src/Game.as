@@ -139,8 +139,7 @@ package
 			// not all games have a player entity, but this is a reasonable starting point for top-down action games
 			// (you may want to add a Player component for your game's custom player logic)
 			Prefab.define("player",
-				Vector.<Class>([ Position, MovieClip, Hitbox, CameraPusher, Movement4Way ]),
-				//Vector.<Class>([ Position, MovieClip, Hitbox, CameraPusher, Movement4Way, Animate4Way ]),
+				Vector.<Class>([ Position, MovieClip, Hitbox, CameraPusher, Movement4Way, Animate4Way ]),
 				{
 					game : this,
 					parentSprite : _gameplaySprite,
@@ -149,18 +148,18 @@ package
 							-Settings.ScreenWidth * 0.3,
 							-Settings.ScreenHeight * 0.3,
 							Settings.ScreenWidth * 0.6,
-							Settings.ScreenHeight * 0.6 )
+							Settings.ScreenHeight * 0.6 ),
+					animations : {
+						"idle_up" : { prefix : "helmut_idle_up", framerate : Settings.SpriteFramerate },
+						"walk_up" : { prefix : "helmut_walk_up", framerate : Settings.SpriteFramerate },
+						"idle_down" : { prefix : "helmut_idle_down", framerate : Settings.SpriteFramerate },
+						"walk_down" : { prefix : "helmut_walk_down", framerate : Settings.SpriteFramerate },
+						"idle_left" : { prefix : "helmut_idle_left", framerate : Settings.SpriteFramerate },
+						"walk_left" : { prefix : "helmut_walk_left", framerate : Settings.SpriteFramerate },
+						"idle_right" : { prefix : "helmut_idle_right", framerate : Settings.SpriteFramerate },
+						"walk_right" : { prefix : "helmut_walk_right", framerate : Settings.SpriteFramerate }
+					}
 				});
-
-//			var playerClip :wyverntail.core.MovieClip = player.getComponent(wyverntail.core.MovieClip) as wyverntail.core.MovieClip;
-//			playerClip.addAnimation("idle_up", Assets.EntitiesAtlas.getTextures("helmut_idle_up"), Settings.SpriteFramerate);
-//			playerClip.addAnimation("walk_up", Assets.EntitiesAtlas.getTextures("helmut_walk_up"), Settings.SpriteFramerate);
-//			playerClip.addAnimation("idle_down", Assets.EntitiesAtlas.getTextures("helmut_idle_down"), Settings.SpriteFramerate);
-//			playerClip.addAnimation("walk_down", Assets.EntitiesAtlas.getTextures("helmut_walk_down"), Settings.SpriteFramerate);
-//			playerClip.addAnimation("idle_left", Assets.EntitiesAtlas.getTextures("helmut_idle_left"), Settings.SpriteFramerate);
-//			playerClip.addAnimation("walk_left", Assets.EntitiesAtlas.getTextures("helmut_walk_left"), Settings.SpriteFramerate);
-//			playerClip.addAnimation("idle_right", Assets.EntitiesAtlas.getTextures("helmut_idle_right"), Settings.SpriteFramerate);
-//			playerClip.addAnimation("walk_right", Assets.EntitiesAtlas.getTextures("helmut_walk_right"), Settings.SpriteFramerate);
 
 			Prefab.define("player_spawn",
 				Vector.<Class>([ Position, PlayerTeleportDestination ]),
